@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adhérer - CIE</title>
+    <link rel="icon" href="logo_CIE_4K.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <header class="site-header" id="top">
+      <nav class="nav-shell" aria-label="Navigation principale">
+        <a class="brand" href="adherer.html"><img src="logo_CIE_4K.png" alt="Logo du Club Informatique de l'EPO" /><span><strong>CIE</strong><small>Club Informatique de l'EPO</small></span></a>
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="nav-links" data-nav-links>
+          <a class="nav-cta active" href="adherer.html">Adhérer</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section join" id="adherer">
+        <div class="section-inner join-layout">
+          <div class="join-copy" data-reveal>
+            <p class="eyebrow">Adhérer</p>
+            <h2>Rejoindre le CIE, c'est entrer dans une communauté qui pratique.</h2>
+            <p>L'adhésion donne accès aux ateliers, aux groupes de projets, aux ressources partagées, aux challenges internes et aux opportunités proposées par le réseau du club.</p>
+            <div class="benefit-list">
+              <div><span>✓</span><p>Parcours d'initiation pour débutants motivés.</p></div>
+              <div><span>✓</span><p>Encadrement par des membres avancés et anciens du club.</p></div>
+              <div><span>✓</span><p>Accès prioritaire aux hackathons et projets collaboratifs.</p></div>
+            </div>
+          </div>
+
+          <form action="login.php" method="POST" class="join-form" data-reveal>
+            <h3>Se connecter</h3>
+            <label>Adresse e-mail<input type="email" name="email" placeholder="vous@exemple.com" autocomplete="email" required /></label>
+            <label>Mot de passe<input type="password" name="password" autocomplete="current-password" required /></label>
+            <button class="button button-primary magnetic" type="submit"><span>Se connecter</span><span class="button-icon" aria-hidden="true">→</span></button>
+            <p class="form-note" data-form-note></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-inner faq-layout">
+          <div class="section-heading" data-reveal><p class="eyebrow">FAQ</p><h2>Questions fréquentes.</h2><p>Les réponses essentielles pour rejoindre le club sans hésiter.</p></div>
+          <div class="faq-list" data-reveal>
+            <article class="faq-item"><button type="button" aria-expanded="false">Faut-il être déjà fort en informatique ?<span aria-hidden="true">+</span></button><div class="faq-answer"><p>Non. Le club accueille les débutants motivés et propose des ateliers progressifs.</p></div></article>
+            <article class="faq-item"><button type="button" aria-expanded="false">Les activités sont-elles réservées aux étudiants de l'EPO ?<span aria-hidden="true">+</span></button><div class="faq-answer"><p>Les membres de l'EPO sont prioritaires. Certaines conférences peuvent être ouvertes aux invités.</p></div></article>
+            <article class="faq-item"><button type="button" aria-expanded="false">Comment intégrer une équipe projet ?<span aria-hidden="true">+</span></button><div class="faq-answer"><p>Après adhésion, vous pouvez rejoindre un pôle selon vos compétences et vos objectifs.</p></div></article>
+            <article class="faq-item"><button type="button" aria-expanded="false">Peut-on proposer un atelier ?<span aria-hidden="true">+</span></button><div class="faq-answer"><p>Oui. Le bureau aide à cadrer le sujet, préparer les supports et planifier la session.</p></div></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-inner footer-inner"><a class="brand footer-brand" href="adherer.html"><img src="logo_CIE_4K.png" alt="" /><span><strong>CIE</strong><small>Club Informatique de l'EPO</small></span></a><p>© 2026 Club Informatique de l'École Polytechnique de Ouagadougou.</p><a href="#top">Retour en haut</a></div>
+    </footer>
+  </body>
+</html>
