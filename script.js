@@ -162,13 +162,13 @@ document.querySelectorAll(".faq-item button").forEach((button) => {
 
 document.querySelectorAll("[data-form]").forEach((form) => {
   form.addEventListener("submit", (event) => {
-    event.preventDefault();
+    //event.preventDefault();
     const note = form.querySelector("[data-form-note]");
     note.textContent =
       form.dataset.form === "connexion"
         ? "Connexion en cours…"
         : "Message prêt à être transmis. Merci pour votre prise de contact.";
-    form.reset();
+    // form.reset();
   });
 });
 
